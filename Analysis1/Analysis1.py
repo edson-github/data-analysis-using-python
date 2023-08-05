@@ -29,7 +29,7 @@ sns.set(style="white")
 # absolute path till parent folder
 abs_path = os.getcwd()
 path_array = abs_path.split("/")
-path_array = path_array[:len(path_array)-1]
+path_array = path_array[:-1]
 homefolder_path = ""
 for i in path_array[1:]:
     homefolder_path = homefolder_path + "/" + i   
@@ -60,7 +60,7 @@ plt.show()
 # In[33]:
 
 # saving the plot
-fig.savefig(abs_path + "/Plots/vehicle-distribution.png")
+fig.savefig(f"{abs_path}/Plots/vehicle-distribution.png")
 
 
 # ## Variation of the price range by the vehicle type
@@ -78,7 +78,7 @@ plt.show()
 # In[45]:
 
 # saving the plot
-fig.savefig(abs_path + "/Plots/price-vehicleType-boxplot.png")
+fig.savefig(f"{abs_path}/Plots/price-vehicleType-boxplot.png")
 
 
 # ## Total count of vehicles by type available on ebay for sale
@@ -97,7 +97,7 @@ for p in g.ax.patches:
 # In[54]:
 
 # saving the plot
-g.savefig(abs_path + "/Plots/count-vehicleType.png")
+g.savefig(f"{abs_path}/Plots/count-vehicleType.png")
 
 
 # In[ ]:

@@ -27,7 +27,7 @@ sns.set(style="white")
 # absolute path till parent folder
 abs_path = os.getcwd()
 path_array = abs_path.split("/")
-path_array = path_array[:len(path_array)-1]
+path_array = path_array[:-1]
 homefolder_path = ""
 for i in path_array[1:]:
     homefolder_path = homefolder_path + "/" + i 
@@ -58,7 +58,7 @@ g.ax.set_title("Count of vehicles by Brand",fontdict={'size':18})
 # In[51]:
 
 # saving the plot
-g.savefig((abs_path + "/Plots/brand-vehicleCount.png"))
+g.savefig(f"{abs_path}/Plots/brand-vehicleCount.png")
 
 
 # ## Average price for vehicles based on the type of vehicle as well as on the type of gearbox
@@ -75,7 +75,7 @@ plt.show()
 # In[64]:
 
 # saving the plot
-fig.savefig((abs_path + "/Plots/vehicletype-gearbox-price.png"))
+fig.savefig(f"{abs_path}/Plots/vehicletype-gearbox-price.png")
 
 
 # In[ ]:

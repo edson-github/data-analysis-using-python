@@ -25,7 +25,7 @@ sns.set(style="white")
 # absolute path till parent folder
 abs_path = os.getcwd()
 path_array = abs_path.split("/")
-path_array = path_array[:len(path_array)-1]
+path_array = path_array[:-1]
 homefolder_path = ""
 for i in path_array[1:]:
     homefolder_path = homefolder_path + "/" + i 
@@ -69,7 +69,7 @@ plt.show()
 
 # In[12]:
 
-fig.savefig((abs_path + "/Plots/heatmap-price-brand-vehicleType.png"))
+fig.savefig(f"{abs_path}/Plots/heatmap-price-brand-vehicleType.png")
 
 
 # In[13]:

@@ -29,7 +29,7 @@ sns.set(style="white")
 # absolute path till parent folder
 abs_path = os.getcwd()
 path_array = abs_path.split("/")
-path_array = path_array[:len(path_array)-1]
+path_array = path_array[:-1]
 homefolder_path = ""
 for i in path_array[1:]:
     homefolder_path = homefolder_path + "/" + i 
@@ -71,13 +71,15 @@ colors = ["windows blue", "amber", "greyish", "faded green", "dusty purple"]
 fig, ax = plt.subplots(figsize=(8,5))
 sns.set_palette(sns.xkcd_palette(colors))
 sns.stripplot(x="vehicleType", y="NoOfDaysOnline", hue="gearbox", split=True, data=frame,size=8, alpha=0.5, jitter=True)
-ax.set_title("No of days a add is online before the vehicles of brand " + search_term + " is sold")
+ax.set_title(
+    f"No of days a add is online before the vehicles of brand {search_term} is sold"
+)
 plt.show()
 
 
 # In[27]:
 
-fig.savefig((abs_path + "/Plots/vehicletype-NoOfDaysOnline.png"))
+fig.savefig(f"{abs_path}/Plots/vehicletype-NoOfDaysOnline.png")
 
 
 # In[ ]:
